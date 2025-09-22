@@ -11,3 +11,15 @@
   - Still uses SAT to select an acyclic trace with **single-parent OR**.
   - Computes **P(g)** (trace success probability) on that trace under the independence assumption.
   - Serves as a comparison baseline for later MVAT (where OR may take multiple parents).
+ 
+- **`mvat_sum_budget_hard.py`**: Greedy MVAT (multi-parent OR) with SUM-cost and HARD budget only.
+  - Builds a baseline SAT trace using weights w (AND=max, OR=min).
+  - Computes its success probability P(g) under independence (node/edge probs p).
+  - Greedily augments OR/goal nodes by adding extra parent edges to maximize ΔP(g),
+    subject to:
+    * Acyclicity (no cycles introduced).
+    * HARD budget on SUM-cost: C_sum(T) <= B, where
+        C_sum(T) = sum_{v in T} w(v) + sum_{(u,v) in T} w(u,v)
+  - If a candidate parent u is not in the current trace, the algorithm attaches the
+    minimal-cost subtrace to u (obtained by running SAT with u as the goal).
+
