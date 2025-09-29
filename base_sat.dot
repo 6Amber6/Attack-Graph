@@ -1,0 +1,16 @@
+digraph Trace {
+  rankdir=TB;
+  "g" [shape=diamond, label="g\n(type=g, w=0.05, p=1.0, P=0.000)"];
+  "vd1" [shape=ellipse, label="vd1\n(type=d, w=0.1, p=0.4, P=0.001)"];
+  "vd2" [shape=ellipse, label="vd2\n(type=d, w=0.1, p=0.95, P=0.000)"];
+  "vp1" [shape=box, label="vp1\n(type=p, w=0.02, p=0.2, P=0.200)"];
+  "vr1" [shape=hexagon, label="vr1\n(type=r, w=0.02, p=0.3, P=0.012)"];
+  "vr3" [shape=hexagon, label="vr3\n(type=r, w=0.12, p=0.8, P=0.000)"];
+  "vr4" [shape=hexagon, label="vr4\n(type=r, w=0.2, p=0.95, P=0.000)"];
+  "vd1" -> "vr3" [label="w=0.1, p=0.4"];
+  "vd2" -> "vr4" [label="w=0.2, p=0.9"];
+  "vp1" -> "vr1" [label="w=0.02, p=0.2"];
+  "vr1" -> "vd1" [label="w=0.02, p=0.3"];
+  "vr3" -> "vd2" [label="w=0.1, p=0.5"];
+  "vr4" -> "g" [label="w=0.1, p=0.95"];
+}

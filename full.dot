@@ -1,0 +1,22 @@
+digraph G {
+  rankdir=TB;
+  "vp1" [shape=box, label="vp1\n(type=p, w=0.02, p=0.2)"];
+  "vr1" [shape=hexagon, label="vr1\n(type=r, w=0.02, p=0.3)"];
+  "vd1" [shape=ellipse, label="vd1\n(type=d, w=0.1, p=0.4)"];
+  "vp2" [shape=box, label="vp2\n(type=p, w=0.25, p=0.95)"];
+  "vp3" [shape=box, label="vp3\n(type=p, w=0.25, p=0.95)"];
+  "vr2" [shape=hexagon, label="vr2\n(type=r, w=0.2, p=0.95)"];
+  "vd2" [shape=ellipse, label="vd2\n(type=d, w=0.1, p=0.95)"];
+  "vr3" [shape=hexagon, label="vr3\n(type=r, w=0.12, p=0.8)"];
+  "vr4" [shape=hexagon, label="vr4\n(type=r, w=0.2, p=0.95)"];
+  "g" [shape=diamond, label="g\n(type=g, w=0.05, p=1.0)"];
+  "vp1" -> "vr1" [label="w=0.02, p=0.2"];
+  "vr1" -> "vd1" [label="w=0.02, p=0.3"];
+  "vp2" -> "vr2" [label="w=0.25, p=0.95"];
+  "vp3" -> "vr2" [label="w=0.25, p=0.95"];
+  "vr2" -> "vd2" [label="w=0.2, p=0.9"];
+  "vd1" -> "vr3" [label="w=0.1, p=0.4"];
+  "vr3" -> "vd2" [label="w=0.1, p=0.5"];
+  "vd2" -> "vr4" [label="w=0.2, p=0.9"];
+  "vr4" -> "g" [label="w=0.1, p=0.95"];
+}
